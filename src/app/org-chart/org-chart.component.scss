@@ -1,0 +1,40 @@
+/* Order */
+@layer reset, primeng;
+
+/* Reset CSS */
+@layer reset {
+    .submitBtn{
+        background-color: grey;
+        border: none;
+
+    }
+    div .personCard{
+        box-shadow: 0.5px 0.5px 5px 3.6px #0937B2; /* Orange shadow */
+        border: 1px solid #0937B2;
+        filter: blur(5px) rgba(0, 0, 0, 0.2); 
+        border-radius: 15px;
+    }
+    div .carddef{
+        border-radius: 15px;
+        border: 1px solid #ffffff;
+    }
+    div div .editIcon{
+        position: absolute;
+        left: 44px;
+        bottom: -18px;
+        border: 0.5px solid rgb(182, 180, 180);
+        padding: 8px;
+        border-radius: 40px;
+        color: #0937B2;
+        
+    }
+    div div .showInfo{
+        position: absolute;
+        right: 44px;
+        bottom: -18px;
+        border: 0.5px solid rgb(189, 185, 185);
+        padding: 8px;
+        border-radius: 40px;
+        color: #0937B2;
+    }
+}

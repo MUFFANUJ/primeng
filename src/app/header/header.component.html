@@ -1,0 +1,48 @@
+<div class="myTeam">
+    <span>My Team</span>
+</div>
+<div class="combinedHeader">
+<div class="inputContainerleft">
+    <p-iconField iconPosition="left">
+        <p-inputIcon styleClass="pi pi-search" />
+        <input type="text" pInputText placeholder="Search Team Member" [(ngModel)]="choosenName" (input)="searchByKey(data,choosenName)"/>
+    </p-iconField>
+    <span style="width: 200px;height: 44px;">
+        <p-dropdown 
+        [options]="cities" 
+        [(ngModel)]="selectedCity" 
+        optionLabel="name"
+        placeholder="Select Tag" 
+        />
+    </span>
+    
+</div>
+{{choosenName}}
+<div class="infoContainer">
+    <div class="infoCard">
+        <div class="circle" style="background-color: 
+        #4F5694;"></div>
+        <span class="post">Admin</span>
+    </div>
+    <div class="infoCard">
+        <div class="circle" style="background-color: 
+        #F15614;"></div>
+        <span class="post">Site Admin</span>
+    </div>
+    <div class="infoCard">
+        <div class="circle" style="background-color: 
+        #008C88;"></div>
+        <span class="post">Group Vendor</span>
+    </div>
+    <div class="infoCard">
+        <div class="circle" style="background-color: #CC006B;"></div>
+        <span class="post">Sub Vendor</span>
+    </div>
+    <div class="infoCard">
+        <div class="circle" style="background-color: #9A4443;"></div>
+        <span class="post">Deployment Associate</span>
+    </div>
+</div>
+
+</div>
+

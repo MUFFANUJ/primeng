@@ -1,0 +1,23 @@
+<div class="card flex justify-content-center overflow-x-auto" style="background-color: #FAFAFA;">
+    <div>
+        <i class="pi pi-plus"></i>
+
+    </div>
+    <p-organizationChart [value]="data" [collapsible]="true">
+        <ng-template let-node pTemplate="person">
+            <div class="p-2 text-center carddef" [class.personCard]="node.data.selected" (click)="handleSelection(node.key, node)">
+                <img 
+                    [src]="node.data.image" 
+                    class="mb-3 w-3rem h-3rem" />
+                <div class="font-bold">
+                    {{ node.data.name }}
+                </div>
+                <div>
+                    {{ node.data.title }}
+                </div>
+                <i class="pi pi-pencil editIcon"></i>
+                <i class="pi pi-info showInfo"></i>
+            </div>
+        </ng-template>
+    </p-organizationChart>
+</div>
