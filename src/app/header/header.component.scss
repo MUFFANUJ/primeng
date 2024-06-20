@@ -1,68 +1,81 @@
-
 /* Order */
-*{
+* {
     font-family: "Lato";
 }
 
-.myTeam{
-    // margin-bottom: 1%;
-    padding: 
-    24px, 24px, 16px, 24px;
-    height: 44px;
-    width: 1366px;
-    gap: 8px;
-    span{
-    width: 66px;
-    height: 24px;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 24px;
-    letter-spacing: 0.2px;
-    color: #181F33;
-    }
-    
+.headerMain {
+    height: 120px;
 
-}
-.combinedHeader{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 
-    0px, 24px, 12px, 24px;
-    .infoContainerleft{
-        display: flex;
-        gap: 16px;
-        width: 462px;
-        height: 44px;
+    .myTeam {
+        // margin-bottom: 1%;
+        height: 64px;
+        width: 1366px;
+        gap: 8px;
+        padding: 24px 24px 16px 24px;
+
+        .team {
+            
+            width: 66px;
+            height: 24px;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+            letter-spacing: 0.2px;
+            color: #181F33;
+        }
     }
-    .infoContainer{
+
+    .combinedHeader {
         display: flex;
-        gap: 32px;
-        width: 604px;
-        height: 34px;
-        padding: 
-        8px, 0px, 8px, 0px;
-        .infoCard{
+        justify-content: space-between;
+        // align-items: center;
+        padding:
+            0px 24px 12px 24px;
+        border-bottom: 1px solid 
+            #E0E0E0;
+            height: 56px;
+
+        .infoContainerleft {
+            // display: flex;
+            // justify-content: center;
+            // gap: 16px;
+            // width: 462px;
+            // height: 44px;
+        }
+
+        .infoContainer {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            // width: 101px;
-            // height: 18px;
-            gap: 8px;
-            .circle{
-                width: 16px;
-                height: 16px;
-                border-radius: 100px;
-            }
-            span{
-                font-weight: 400;
-                font-size: 12px;
-                line-height: 18px;
-                letter-spacing: 0.2px;
+            gap: 32px;
+            width: 604px;
+            height: 34px;
+            padding:
+                8px 0px 8px 0px;
+
+            .infoCard {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                // width: 101px;
+                height: 18px;
+                gap: 8px;
+
+                .circle {
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 100px;
+                }
+
+                span {
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 18px;
+                    letter-spacing: 0.2px;
+                }
             }
         }
     }
 }
+
 
 
 
@@ -71,18 +84,22 @@
 /* Reset CSS */
 @layer reset {
     .inputContainer {
-        input{
-        width: 320px;
         height: 44px;
-        border-radius: 6px;
-        padding: 
-        8px, 12px, 8px, 8px;
-        gap: 4px;
-        border: 1px;
+        width: 462px;
+        input {
+            width: 320px;
+            height: 44px;
+            border-radius: 6px;
+            padding:
+                8px, 12px, 8px, 8px;
+            gap: 4px;
+            border: 1px solid 
+            #E0E0E0;
         }
     }
-    .p-dropdown .p-inputwrapper .p-component{
-        width: 20vw;
-        height: 5vh;
-    }
+
+    // .p-dropdown .p-inputwrapper .p-component {
+    //     width: 20vw;
+    //     height: 5vh;
+    // }
 }

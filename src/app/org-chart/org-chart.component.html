@@ -1,22 +1,74 @@
-<div class="card flex justify-content-center overflow-x-auto" style="background-color: #FAFAFA;">
-    <div>
-        <i class="pi pi-plus"></i>
+<div class="card flex justify-content-center body" style="background-color: #FAFAFA;position: relative;overflow: auto;width: 100vw;transform-origin: top left;transition: transform 0.3s ease;"
+>
+<div style="margin: 56px;"></div>
 
-    </div>
-    <p-organizationChart [value]="data" [collapsible]="true">
+        <div class="btnContainer">
+            <div class="takeMeBtnContainer">
+                <button (click)="search()" class="takeMeBtn">
+                    <i class="pi pi-align-justify "></i>
+                </button>
+            </div>
+            
+            <div class="zoomContainer">
+                <button class="zoomBtns" (click)="zoomIn()">
+                    <i class="pi pi-plus"></i>
+                </button>
+                <button class="zoomBtns" (click)="zoomOut()">
+                    <i class="pi pi-minus"></i>
+                </button>
+            </div>
+        </div>
+    <p-organizationChart [value]="data" [collapsible]="true" #orgChart>
         <ng-template let-node pTemplate="person">
-            <div class="p-2 text-center carddef" [class.personCard]="node.data.selected" (click)="handleSelection(node.key, node)">
-                <img 
-                    [src]="node.data.image" 
-                    class="mb-3 w-3rem h-3rem" />
-                <div class="font-bold">
-                    {{ node.data.name }}
+            <div style="width: 40px;height: 40px; border-radius: 400px; margin: auto; position: relative; top: 20px;" [style.backgroundColor]="node.data.background">
+                <span class="shortNameShow" style="width: 13px; height: 18px; font-family: 'Lato',sans-serif;font-weight: 700; font-size: 12px;line-height: 18px; letter-spacing: 0.25px; text-align: center; color: #FFFFFF;position: relative; top: 8px;" >
+                    {{node.data.name.substring(0, 2).toUpperCase()}}
+                </span>
+    
+            </div>
+            <div class="p-2 text-center carddef" [class.personCard]="node.data.selected" (click)="handleSelection(node)">
+                
+                <div class="font-bold userDetails">
+                    <div class="userNameContainer"> 
+                        <span class="userName">{{ node.data.name }}</span>
+                            <span class="editIcon">
+                                <i class="pi pi-pencil"></i>
+                            </span>
+                            
+                        </div>
+                        
+                    <div class="userEmail">
+                        maharajagmail.com
+                    </div>
                 </div>
-                <div>
-                    {{ node.data.title }}
+
+                <div class="userTags">
+                    <span class="tagNameContainer">
+                        <span class="actualName">
+                        Bosch_Adugodi
+                        </span>
+                    </span>
+                    <span class="anotherTagNameContainer">
+                        <span class="actualAnotherName">
+                            Boach_EC..
+                        </span>
+                        
+                    </span>
+                    <span class="tagCount">
+                        <span class="actualCount">
+                            +4
+                        </span>
+                    </span>
                 </div>
-                <i class="pi pi-pencil editIcon"></i>
-                <i class="pi pi-info showInfo"></i>
+
+                <div class="moveProfile">
+                    <span class="moveIcon">
+                        <i class="pi pi-bars"></i>
+                    </span>
+                    <span class="moveProfilText">
+                        Move Profile
+                    </span>
+                </div>
             </div>
         </ng-template>
     </p-organizationChart>

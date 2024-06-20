@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild,AfterViewInit, ElementRef } from '@angular/core';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import { InputTextModule } from 'primeng/inputtext';
@@ -8,6 +8,7 @@ import { TreeNode } from 'primeng/api';
 import { dataModule } from '../module/data.module';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { OrgChartComponent } from '../org-chart/org-chart.component';
 
 
 interface City {
@@ -22,14 +23,17 @@ interface City {
   styleUrl: './header.component.scss'
 })
 
-export class HeaderComponent {
+export class HeaderComponent{
   cities: City[] | undefined;
-  constructor(private dataService: dataModule) { }
+  @ViewChild(OrgChartComponent) orgChartComponent!: OrgChartComponent;
+  // orgChart: any;
+  constructor(private dataService: dataModule,private elementRef: ElementRef) {}
   selectedCity: City | undefined;
-  choosenName!: String;
-  data = this.dataService.data
-
-
+  choosenName!: string;
+  // data = this.dataService.data
+  // searchName = this.dataService.searchName;
+  // searchName: string = '';
+  foundNode: TreeNode | null = null;
 
   ngOnInit() {
     this.cities = [
@@ -40,27 +44,55 @@ export class HeaderComponent {
       { name: 'Paris', code: 'PRS' }
     ];
   }
-  // onChange(){
-  //   this.searchByKey(this.data,this.choosenName)
+
+  
+    // Example: Call scroll function on keydown event
+    
+    // this.elementRef.nativeElement.addEventListener('keydown', (event:Event) => {
+    //   if (event.key === 'Enter') {
+    //     this.orgChart.scrollToNode('nodeKey'); // Replace 'nodeKey' with the actual node key
+    //   }
+    // });
+  
+
+  search(): void {
+    console.log("nope")
+    this.orgChartComponent.simply("searchTerm");
+    this.foundNode = this.dataService.findNodeByName(this.choosenName);
+    this.dataService.updateSearchName(this.choosenName);
+    if (!this.foundNode) {
+      // console.log(`Node with name '${this.searchName}' not found.`);
+    }else{
+      // console.log(`Node with name '${this.searchName}' found.`);
+      
+      
+    }
+  }
+  // onEnter(): void {
+  //   console.log("Entered")
+  //   if (!this.dataService.getName()) return; 
+
+  //   const chartNodes = this.OrgChartComponent.orgChart.el.nativeElement.querySelectorAll('.p-organizationchart-node-content');
+  //   if (chartNodes) {
+  //     let foundNode = null;
+  //     chartNodes.forEach((node: HTMLElement) => {
+  //       const nodeText = node.textContent || node.innerText;
+  //       if (nodeText.toLowerCase().includes(this.dataService.getName().toLowerCase())) {
+  //         foundNode = node;
+  //         console.log(foundNode)
+  //         return; 
+  //       }
+  //     });
+
+  //     if (foundNode) {
+  //       this.scrollToNode(foundNode);
+  //     } else {
+  //       console.log(`Node with text '${this.dataService.getName()}' not found.`);
+  //     }
+  //   }
   // }
 
-  searchByKey(data: TreeNode[], key: String): TreeNode | null {
-    for (const i of this.data) {
-      if (i.data.selected) {
-        i.data.selected = false;
-      }
-      if (i.data.name.toLowerCase().includes(key.toLowerCase())) {
-        i.data.selected = true;
-        return i
-      }
-      if (i.children) {
-        const result = this.searchByKey(i.children, key);
-        if (result) {
-          return result
-        }
-      }
-    }
-    return null
-  }
-  
+  // scrollToNode(node: HTMLElement): void {
+  //   node.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
+  // }
 }

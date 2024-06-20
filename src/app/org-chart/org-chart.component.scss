@@ -1,40 +1,317 @@
-/* Order */
+.body {
+    position: relative;
+    overflow: auto;
+    width: 100vw;
+    transform-origin: top left;
+    transition: transform 0.3s ease;
+    .btnContainer{
+        position: fixed;
+        top: 25px;
+        right: 107px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .takeMeBtnContainer{
+            width: 40px;
+        height: 40px;
+        border-radius: 3px;
+        padding: 8px;
+        border: 1px solid #E0E0E0;
+        gap: 8px;
+        display: flex;
+        background: 
+        #DAE1F3;
+            .takeMeBtn{
+                width: 24px;
+                height: 24px;
+                padding: 10px;
+                // background-color: red;
+                margin: auto;
+                text-align: center;
+                // border: 1px solid blue;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+                background: #ffffff;
+                border: none;
+                cursor: pointer;
+                background: 
+        #DAE1F3;
+            }
+        }
+        
+    }
+    .zoomContainer {
+        width: 81px;
+        height: 40px;
+        border-radius: 3px;
+        padding: 8px;
+        border: 1px solid #E0E0E0;
+        gap: 8px;
+        display: flex;
+        position: fixed;
+        top: 25px;
+        right: 10px;
+        background: #ffffff;
+        z-index: 1000;
+
+        // position: absolute;
+        // top: 20px; 
+        // right: 20px; 
+        // z-index: 1000;
+
+        .zoomBtns {
+            width: 24px;
+            height: 24px;
+            padding: 10px;
+            // background-color: red;
+            margin: auto;
+            text-align: center;
+            // border: 1px solid blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            background: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+    }
+
+}
+
 @layer reset, primeng;
 
 /* Reset CSS */
 @layer reset {
-    .submitBtn{
+    .submitBtn {
         background-color: grey;
         border: none;
 
     }
-    div .personCard{
-        box-shadow: 0.5px 0.5px 5px 3.6px #0937B2; /* Orange shadow */
-        border: 1px solid #0937B2;
-        filter: blur(5px) rgba(0, 0, 0, 0.2); 
-        border-radius: 15px;
+
+    .p-organizationchart .p-organizationchart-node-content {
+        border: none;
+        background: none;
+        color: #6c6c6c;
+        padding: 1rem;
     }
-    div .carddef{
-        border-radius: 15px;
-        border: 1px solid #ffffff;
+
+    div {
+        .personCard {
+            box-shadow: 0.5px 0.5px 5px 2px #0937B2;
+            border: 2px solid #0937B2;
+            border-radius: 15px;
+        }
+
+        .carddef {
+            border-radius: 6px;
+            background: #ffffff;
+            border: 1px solid #E0E0E0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 24px 12px 24px 12px;
+            width: 200px;
+            height: 148px;
+            font-family: "Lato", sans-serif;
+
+            .userDetails {
+                height: 37px;
+                width: 176px;
+                gap: 4px;
+
+                .userNameContainer {
+                    display: flex;
+                    height: 18px;
+                    width: 176px;
+                    justify-content: space-between;
+
+                    .userName {
+                        height: 18px;
+                        font-weight: 700;
+                        font-size: 12px;
+                        line-height: 18px;
+                        letter-spacing: 0.25px;
+                        color:
+                            #181F33;
+                    }
+
+                    .editIcon {
+                        height: 18px;
+                        width: 16px;
+                        color:
+                            #0937B2;
+
+                        i {
+                            height: 10.76px;
+                            width: 10.76px;
+                        }
+                    }
+
+                }
+
+                .userEmail {
+                    height: 15px;
+                    width: 111px;
+                    font-family: "Lato", sans-serif;
+                    font-weight: 400px;
+                    font-size: 10px;
+                    line-height: 15px;
+                    text-align: start;
+                    color:
+                        #6A737D;
+                }
+            }
+
+            .userTags {
+                height: 23px;
+                width: 176px;
+                display: flex;
+                gap: 8px;
+
+                .tagNameContainer {
+                    height: 23px;
+                    width: 76px;
+                    border-radius: 3px;
+                    padding: 4px;
+                    gap: 4px;
+                    background: #FAEFED;
+
+                    .actualName {
+                        height: 15px;
+                        width: 68px;
+                        font-family: "Lato", sans-serif;
+                        font-weight: 400;
+                        font-size: 10px;
+                        line-height: 15px;
+                        color:
+                            #ED711C;
+                    }
+                }
+
+                .anotherTagNameContainer {
+                    height: 23px;
+                    width: 60px;
+                    border-radius: 3px;
+                    padding: 4px;
+                    gap: 4px;
+                    background: #E1F6FD;
+
+                    .actualAnotherName {
+                        font-family: "Lato", sans-serif;
+                        height: 15px;
+                        width: 52px;
+                        font-weight: 400;
+                        font-size: 10px;
+                        line-height: 15px;
+                        color: #0937B2;
+                    }
+                }
+
+                .tagCount {
+                    width: 24px;
+                    height: 23px;
+                    border-radius: 20px;
+                    padding:
+                        4px 6px 4px 6px;
+                    gap: 4px;
+                    background: #F5F5F5;
+
+                    .actualCount {
+                        width: 12px;
+                        height: 15px;
+                        font-family: "Lato", sans-serif;
+                        font-weight: 400;
+                        font-size: 10px;
+                        line-height: 15px;
+                        color: #181F33;
+                    }
+                }
+            }
+
+            .moveProfile {
+                width: 176px;
+                height: 24px;
+                gap: 8px;
+                border-radius: 4px;
+                border: 1px solid #0937B2;
+                padding: 4px;
+                margin: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .moveIcon {
+                    width: 16px;
+                    height: 16px;
+
+                    i {
+                        width: 13.13px;
+                        height: 7.47px;
+                        color: #0937B2;
+                    }
+                }
+
+                .moveProfilText {
+                    width: 56px;
+                    height: 15px;
+                    font-family: "Lato", sans-serif;
+                    font-weight: 400;
+                    font-size: 10px;
+                    text-align: center;
+                    line-height: 15px;
+                    color: #0937B2;
+                }
+            }
+
+
+        }
     }
-    div div .editIcon{
-        position: absolute;
-        left: 44px;
-        bottom: -18px;
-        border: 0.5px solid rgb(182, 180, 180);
-        padding: 8px;
-        border-radius: 40px;
-        color: #0937B2;
-        
+
+    // div div .editIcon{
+    //     position: absolute;
+    //     left: 44px;
+    //     bottom: -18px;
+    //     border: 0.5px solid rgb(182, 180, 180);
+    //     padding: 8px;
+    //     border-radius: 40px;
+    //     color: #0937B2;
+
+    // }
+    // div div .showInfo{
+    //     position: absolute;
+    //     right: 44px;
+    //     bottom: -18px;
+    //     border: 0.5px solid rgb(189, 185, 185);
+    //     padding: 8px;
+    //     border-radius: 40px;
+    //     color: #0937B2;
+    // }
+    // div  {
+    //     .p-organizationchart{
+    //         .p-organizationchart-node-content{
+    //             border: none;
+
+    //         }
+    //     }
+
+    // }
+    .p-organizationchart .p-organizationchart-node-content {
+        /* Your custom styles here */
+        background-color: #f0f0f0;
+        /* Example background color */
+        color: #333;
+        /* Example text color */
+        border: 0;
+        /* Example border */
     }
-    div div .showInfo{
-        position: absolute;
-        right: 44px;
-        bottom: -18px;
-        border: 0.5px solid rgb(189, 185, 185);
-        padding: 8px;
-        border-radius: 40px;
-        color: #0937B2;
-    }
+    :host ::ng-deep .p-organizationchart .p-organizationchart-node-content {
+        border: none;
+        background: none;
+        padding: 0;
+        position: relative;
+        top: -13px;
+      }
 }

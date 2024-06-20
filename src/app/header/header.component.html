@@ -1,23 +1,34 @@
+<div class="headerMain">
 <div class="myTeam">
-    <span>My Team</span>
+    <span class="team">My Team</span>
 </div>
 <div class="combinedHeader">
-<div class="inputContainerleft">
-    <p-iconField iconPosition="left">
-        <p-inputIcon styleClass="pi pi-search" />
-        <input type="text" pInputText placeholder="Search Team Member" [(ngModel)]="choosenName" (input)="searchByKey(data,choosenName)"/>
+<div class="inputContainerleft" [style]="{display:'flex',justifyContent:'center',height:'44px',width: '470px',gap:'24px'}">
+    <p-iconField iconPosition="left" [style]="{width:'320px',height:'44px', borderRadius:'6px',border:'1px solid #E0E0E0',padding:'
+    8px 12px 8px 8px',gap:'4px',display:'flex'}">
+    <div [style]="{width:'300px',height:'24px', gap:'8px',display:'flex',justifyContent:'center',alignItems:'center'}">
+        <p-inputIcon styleClass="pi pi-search" [style]="{width:'24px',height:'24px'}"/>
+        <input type="text" pInputText placeholder="Search Team Member" [(ngModel)]="choosenName" (input)="search()
+        "
+        
+        [style]="{width:'268px',height:'20px', gap:'8px',display:'flex',fontFamily:'Lato',fontWeight:'400',fontSize:'14px',lineHeight:'20px',letterSpacing:'0.2px',color:'
+        #6A737D',border:'none'}"
+        />
+    </div>
+        
     </p-iconField>
-    <span style="width: 200px;height: 44px;">
+    <!-- <span> -->
         <p-dropdown 
         [options]="cities" 
         [(ngModel)]="selectedCity" 
         optionLabel="name"
         placeholder="Select Tag" 
+        [style]="{width:'126px',height:'44px', borderRadius:'6px',border:'1px solid #E0E0E0',padding:'
+        10px 12px 10px 12px',fontFamily:'Lato',fontWeight:'400',fontSize:'14px',lineHeight:'10px',letterSpacing:'0.2px'}"
         />
-    </span>
+    <!-- </span> -->
     
 </div>
-{{choosenName}}
 <div class="infoContainer">
     <div class="infoCard">
         <div class="circle" style="background-color: 
@@ -45,4 +56,4 @@
 </div>
 
 </div>
-
+</div>
